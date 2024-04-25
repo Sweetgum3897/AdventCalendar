@@ -27,9 +27,9 @@ promises.push(new Promise((res, rej) =>{
     })
 }))
     Promise.all(promises).then(() => {
-     axios.post("https://mignongenerated.mypinata.cloud/ipfs/AdventCalendarTest", ipfsArray, {
+     axios.post("https://mignongenerated.mypinata.cloud/ipfs/", ipfsArray, {
          headers: {
-         "X-API-Key": "26880303883af71dca44",
+         "X-API-Key": "",
          "Content-Type": "application/json",
          "accept": "application/json"
          }
