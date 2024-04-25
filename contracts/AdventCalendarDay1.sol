@@ -23,11 +23,11 @@ contract TwelveMignonDaysofChristmas is ERC1155, Ownable {
     uint256 public constant  Mignonatao = 10;
     uint256 public constant  Merging = 11;
 
-    //address[] public _to = "[0x78b69454c4989afFe7321A36995ea173C383F1Fe, 0xdC0bB7E2aC5FF6851554Dc6E842F6aA171E72521, 0x17704da7540B9Bd2316a277453193e19Fb5B5c0c]";
+    //address[] public _to = "";
    // uint256[] public id = [0, 0, 0];
    // uint256[] public amount = "[1, 1, 1]";
 
-    constructor() public ERC1155("https://mignongenerated.mypinata.cloud/ipfs/QmRvxTg6mi2c5q6pHGUaK6q83jTuo85jYAgkUdAiebkXNg/{id}.json") {
+    constructor() public ERC1155("https://mignongenerated.mypinata.cloud/ipfs/{folder}/{id}.json") {
 
         _mint(msg.sender, Robin, 250, "");
         _mint(msg.sender, Ape, 250, "");
@@ -52,7 +52,7 @@ contract TwelveMignonDaysofChristmas is ERC1155, Ownable {
     function uri(uint256 _tokenId) override public view returns (string memory) {
         return string(
             abi.encodePacked(
-                "https://mignongenerated.mypinata.cloud/ipfs/QmRvxTg6mi2c5q6pHGUaK6q83jTuo85jYAgkUdAiebkXNg/", Strings.toString(_tokenId),
+                "https://mignongenerated.mypinata.cloud/ipfs/{folder}/", Strings.toString(_tokenId),
                 ".json"
             )
         );
